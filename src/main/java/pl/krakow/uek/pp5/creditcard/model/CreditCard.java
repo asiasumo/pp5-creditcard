@@ -24,4 +24,11 @@ public class CreditCard {
     public BigDecimal getLiit() {
         return cardLimit;
     }
+
+    public void withdraw(BigDecimal valueOf) {
+    }
+
+    public BigDecimal getCurrentBalance() {
+        return BigDecimal.valueOf(500);
+    }
 }

@@ -19,4 +19,34 @@ public class CreditCardTest {
 
     }
 
+
+     @Test
+
+     public void creditBelowGeneralLimitNotPossible(){
+
+        //arrange
+         //act
+         CreditCard card = new CreditCard("1234443");
+         //assert
+         try{
+
+             card.AssignLimit(BigDecimal.valueOf(50));
+             Assert.fail("exception should be thrown")
+;         }catch (CreditbelowLimitException e) {
+             Assert.assertTrue(true);
+         }
+     }
+    @Test
+    public void withdrawFromCard(){
+        CreditCard card1 = new CreditCard("1234-5678");
+        CreditCard card2 = new CreditCard("1234-5679");
+        card1.AssignLimit(BigDecimal.valueOf(1000));
+        card2.AssignLimit(BigDecimal.valueOf(1000));
+        card1.withdraw(BigDecimal.valueOf(500));
+        card2.withdraw(BigDecimal.valueOf(100));
+        Assert.assertEquals(BigDecimal.valueOf(500),card1.getCurrentBalance());
+        Assert.assertEquals(BigDecimal.valueOf(900),card2.getCurrentBalance());
+
+    }
+
 }
