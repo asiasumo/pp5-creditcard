@@ -49,4 +49,17 @@ public class CreditCardTest {
 
     }
 
+    @Test(expected = NotEnoughMoneyException.class)
+
+    public void denyWithdrawBelowBalance(){
+
+        CreditCard card = new CreditCard("1234-5678");
+        card.AssignLimit(BigDecimal.valueOf(1000));
+
+        card.withdraw(BigDecimal.valueOf(600));
+        card.withdraw(BigDecimal.valueOf(600));
+
+
+
+    }
 }
