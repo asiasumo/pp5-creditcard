@@ -4,13 +4,19 @@ import java.math.BigDecimal;
 
 public class WithdrawCommand {
     private final String creditCardNumber;
-    private final BigDecimal bigDecimal;
+    private final BigDecimal amount;
 
     public WithdrawCommand(String creditCardNumber, BigDecimal bigDecimal) {
         this.creditCardNumber = creditCardNumber;
-        this.bigDecimal = bigDecimal;
+        this.amount = bigDecimal;
     }
 
 
+    public String getCCNumber() {
+        return creditCardNumber;
+    }
 
+    public BigDecimal getAmount() {
+        return amount;
+    }
 }

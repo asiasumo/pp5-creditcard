@@ -9,7 +9,7 @@ public class CreditCardApiTest {
 
     public static final String CREDIT_CARD_NUMBER = "1234-5678";
     public static final BigDecimal CC_LIMIT = BigDecimal.valueOf(1000);
-    private InMemoryCreditCardStorage storage;
+    private CreditCardStorage storage;
     private CreditCardFacade api;
 
     @Test
@@ -40,6 +40,6 @@ public class CreditCardApiTest {
     }
 
     private void thereIsCCApi() {
-        this.api = new CreditCardFacade();
+        this.api = new CreditCardFacade(this.storage);
     }
 }
