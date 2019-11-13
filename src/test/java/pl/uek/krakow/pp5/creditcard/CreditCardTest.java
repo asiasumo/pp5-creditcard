@@ -1,4 +1,4 @@
-package pl.krakow.uek.pp5.creditcard.model;
+package pl.uek.krakow.pp5.creditcard;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -14,8 +14,8 @@ public class CreditCardTest {
 
         CreditCard card = new CreditCard("1234443");
 
-        card.AssignLimit(BigDecimal.valueOf(LIMIT));
-        Assert.assertTrue(card.getLiit().equals(BigDecimal.valueOf(LIMIT)));
+        card.assignLimit(BigDecimal.valueOf(LIMIT));
+        Assert.assertTrue(card.getLimit().equals(BigDecimal.valueOf(LIMIT)));
 
     }
 
@@ -31,7 +31,7 @@ public class CreditCardTest {
          //assert
          try{
 
-             card.AssignLimit(BigDecimal.valueOf(50));
+             card.assignLimit(BigDecimal.valueOf(50));
              Assert.fail("exception should be thrown")
 ;         }catch (CreditbelowLimitException e) {
              Assert.assertTrue(true);
@@ -41,8 +41,8 @@ public class CreditCardTest {
     public void withdrawFromCard(){
         CreditCard card1 = new CreditCard("1234-5678");
         CreditCard card2 = new CreditCard("1234-5679");
-        card1.AssignLimit(BigDecimal.valueOf(1000));
-        card2.AssignLimit(BigDecimal.valueOf(1000));
+        card1.assignLimit(BigDecimal.valueOf(1000));
+        card2.assignLimit(BigDecimal.valueOf(1000));
         card1.withdraw(BigDecimal.valueOf(500));
         card2.withdraw(BigDecimal.valueOf(100));
         Assert.assertEquals(BigDecimal.valueOf(500),card1.getCurrentBalance());
@@ -55,7 +55,7 @@ public class CreditCardTest {
     public void denyWithdrawBelowBalance(){
 
         CreditCard card = new CreditCard("1234-5678");
-        card.AssignLimit(BigDecimal.valueOf(1000));
+        card.assignLimit(BigDecimal.valueOf(1000));
 
         card.withdraw(BigDecimal.valueOf(600));
         card.withdraw(BigDecimal.valueOf(600));

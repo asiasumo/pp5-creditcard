@@ -1,4 +1,4 @@
-package pl.krakow.uek.pp5.creditcard.model;
+package pl.uek.krakow.pp5.creditcard;
 
 import java.math.BigDecimal;
 
@@ -16,12 +16,12 @@ public class CreditCard {
 
 
 
-    public void AssignLimit(BigDecimal newLimit) {
+    public void assignLimit(BigDecimal newLimit) {
         cardLimit  = newLimit;
 
     }
 
-    public BigDecimal getLiit() {
+    public BigDecimal getLimit() {
         return cardLimit;
     }
 
