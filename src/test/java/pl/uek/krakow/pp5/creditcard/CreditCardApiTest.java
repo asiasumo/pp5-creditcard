@@ -3,6 +3,8 @@ package pl.uek.krakow.pp5.creditcard;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.krakow.uek.pp5.creditcard.domain.CreditCard;
+import pl.krakow.uek.pp5.creditcard.facade.CreditCardFacadeImpl;
+import pl.krakow.uek.pp5.creditcard.storage.CreditCardStorage;
 import pl.krakow.uek.pp5.creditcard.storage.InMemoryCreditCardStorage;
 
 import java.math.BigDecimal;
@@ -12,7 +14,7 @@ public class CreditCardApiTest {
     public static final String CREDIT_CARD_NUMBER = "1234-5678";
     public static final BigDecimal CC_LIMIT = BigDecimal.valueOf(1000);
     private CreditCardStorage storage;
-    private CreditCardFacade api;
+    private CreditCardFacadeImpl api;
 
     @Test
     public void iAmAbleToWithdrawFromCard() {
@@ -42,6 +44,6 @@ public class CreditCardApiTest {
     }
 
     private void thereIsCCApi() {
-        this.api = new CreditCardFacade(this.storage);
+        this.api = new CreditCardFacadeImpl(this.storage);
     }
 }

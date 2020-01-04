@@ -1,4 +1,4 @@
-package pl.uek.krakow.pp5.creditcard;
+package pl.krakow.uek.pp5.creditcard.storage;
 
 import pl.krakow.uek.pp5.creditcard.domain.CreditCard;
 
