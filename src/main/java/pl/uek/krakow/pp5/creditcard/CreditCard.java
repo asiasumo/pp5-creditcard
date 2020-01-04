@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class CreditCard {
 
 
-    String cardNumber;
+    private String cardNumber;
     private BigDecimal cardLimit;
 
     public CreditCard(String cardNumber) {
@@ -33,4 +33,7 @@ public class CreditCard {
         return BigDecimal.valueOf(500);
     }
 
+    public String getCardNumber() {
+        return cardNumber;
+    }
 }

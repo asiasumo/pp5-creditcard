@@ -2,6 +2,7 @@ package pl.uek.krakow.pp5.creditcard;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.krakow.uek.pp5.creditcard.storage.InMemoryCreditCardStorage;
 
 import java.math.BigDecimal;
 
