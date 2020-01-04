@@ -1,6 +1,6 @@
 package pl.krakow.uek.pp5.creditcard.storage;
 
-import pl.uek.krakow.pp5.creditcard.CreditCard;
+import pl.krakow.uek.pp5.creditcard.domain.CreditCard;
 import pl.uek.krakow.pp5.creditcard.CreditCardStorage;
 
 import java.math.BigDecimal;

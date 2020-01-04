@@ -2,6 +2,7 @@ package pl.uek.krakow.pp5.creditcard;
 
 import org.junit.Assert;
 import org.junit.Test;
+import pl.krakow.uek.pp5.creditcard.domain.CreditCard;
 
 import java.math.BigDecimal;
 
@@ -33,7 +34,7 @@ public class CreditCardTest {
 
              card.assignLimit(BigDecimal.valueOf(50));
              Assert.fail("exception should be thrown")
-;         }catch (CreditbelowLimitException e) {
+;         }catch (CreditBelowLimitException e) {
              Assert.assertTrue(true);
          }
      }
