@@ -2,7 +2,7 @@ package pl.krakow.uek.pp5.creditcard.facade;
 
 import pl.krakow.uek.pp5.creditcard.domain.CreditCard;
 import pl.krakow.uek.pp5.creditcard.storage.CreditCardStorage;
-import pl.uek.krakow.pp5.creditcard.WithdrawCommand;
+import pl.krakow.uek.pp5.creditcard.controller.WithdrawCommand;
 
 public class CreditCardFacadeImpl implements CreditCardFacade {
 

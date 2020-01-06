@@ -23,7 +23,6 @@ public class CreditCardTest {
 
 
      @Test
-
      public void creditBelowGeneralLimitNotPossible(){
 
         //arrange
@@ -42,11 +41,13 @@ public class CreditCardTest {
     public void withdrawFromCard(){
         CreditCard card1 = new CreditCard("1234-5678");
         CreditCard card2 = new CreditCard("1234-5679");
-        card1.assignLimit(BigDecimal.valueOf(1000));
+        card1.assignLimit(BigDecimal.valueOf(2100));
         card2.assignLimit(BigDecimal.valueOf(1000));
-        card1.withdraw(BigDecimal.valueOf(500));
+        card1.insertMoney(BigDecimal.valueOf(2200));
+        card2.insertMoney(BigDecimal.valueOf(1000));
+        card1.withdraw(BigDecimal.valueOf(2000));
         card2.withdraw(BigDecimal.valueOf(100));
-        Assert.assertEquals(BigDecimal.valueOf(500),card1.getCurrentBalance());
+        Assert.assertEquals(BigDecimal.valueOf(200),card1.getCurrentBalance());
         Assert.assertEquals(BigDecimal.valueOf(900),card2.getCurrentBalance());
 
     }

@@ -1,10 +1,16 @@
 package pl.krakow.uek.pp5.creditcard.domain;
 
+import lombok.*;
+import pl.krakow.uek.pp5.creditcard.storage.models.CreditCardData;
 import pl.uek.krakow.pp5.creditcard.CreditBelowLimitException;
 import pl.uek.krakow.pp5.creditcard.NotEnoughMoneyException;
 
 import java.math.BigDecimal;
 
+
+@Builder
+@Getter
+@AllArgsConstructor
 public class CreditCard {
     private final String cardNumber;
     private BigDecimal cardLimit;
@@ -22,6 +28,9 @@ public class CreditCard {
             throw new CreditBelowLimitException();
         }
         cardLimit = newLimit;
+    }
+    public void insertMoney(BigDecimal amount){
+        balance = balance.add(amount);
     }
 
     public BigDecimal getLimit() {
@@ -44,6 +53,11 @@ public class CreditCard {
         return cardNumber;
     }
 
-
-
+    public static CreditCard of(CreditCardData creditCard) {
+        if (creditCard == null) return null;
+        return CreditCard.builder()
+                .cardNumber(creditCard.getCardNumber())
+                .cardLimit(creditCard.getLimit())
+                .build();
+    }
 }
