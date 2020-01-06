@@ -18,7 +18,7 @@ public class CreditCard {
 
     public CreditCard(String cardNumber) {
         this.cardNumber = cardNumber;
-        this.balance = new BigDecimal(0);
+        this.balance = new BigDecimal(20);
         this.cardLimit = new BigDecimal(100);
 
     }
