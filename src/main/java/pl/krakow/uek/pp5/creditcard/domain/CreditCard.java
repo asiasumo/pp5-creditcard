@@ -53,6 +53,8 @@ public class CreditCard {
         return cardNumber;
     }
 
+
+    //creditcard made of ccdata, worth to create when streams used often
     public static CreditCard of(CreditCardData creditCard) {
         if (creditCard == null) return null;
         return CreditCard.builder()

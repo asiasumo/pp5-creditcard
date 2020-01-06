@@ -1,8 +1,13 @@
 package pl.krakow.uek.pp5.creditcard.facade;
 
 import pl.krakow.uek.pp5.creditcard.domain.CreditCard;
+import pl.krakow.uek.pp5.creditcard.domain.dto.CardBalanceDto;
 import pl.krakow.uek.pp5.creditcard.storage.CreditCardStorage;
 import pl.krakow.uek.pp5.creditcard.controller.WithdrawCommand;
+import pl.krakow.uek.pp5.creditcard.storage.models.CreditCardData;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class CreditCardFacadeImpl implements CreditCardFacade {
 
@@ -19,5 +24,18 @@ public class CreditCardFacadeImpl implements CreditCardFacade {
         loaded.withdraw(withdrawCommand.getAmount());
 
         storage.add(loaded);
+    }
+    public List<CardBalanceDto> getAll() {
+        return storage.all()
+                .stream()
+                .map(card ->
+                        CardBalanceDto.builder()
+                        .cardNumber(card.getCardNumber())
+                        .balance(card.getCurrentBalance())
+                        .build())
+                .collect(Collectors.toList());
+
+
+
     }
 }
