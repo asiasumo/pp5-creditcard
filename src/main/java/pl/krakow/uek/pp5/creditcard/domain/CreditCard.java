@@ -2,8 +2,8 @@ package pl.krakow.uek.pp5.creditcard.domain;
 
 import lombok.*;
 import pl.krakow.uek.pp5.creditcard.storage.models.CreditCardData;
-import pl.uek.krakow.pp5.creditcard.CreditBelowLimitException;
-import pl.uek.krakow.pp5.creditcard.NotEnoughMoneyException;
+import pl.krakow.uek.pp5.creditcard.exceptions.CreditBelowLimitException;
+import pl.krakow.uek.pp5.creditcard.exceptions.NotEnoughMoneyException;
 
 import java.math.BigDecimal;
 

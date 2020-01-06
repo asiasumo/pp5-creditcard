@@ -3,6 +3,8 @@ package pl.uek.krakow.pp5.creditcard;
 import org.junit.Assert;
 import org.junit.Test;
 import pl.krakow.uek.pp5.creditcard.domain.CreditCard;
+import pl.krakow.uek.pp5.creditcard.exceptions.CreditBelowLimitException;
+import pl.krakow.uek.pp5.creditcard.exceptions.NotEnoughMoneyException;
 
 import java.math.BigDecimal;
 
