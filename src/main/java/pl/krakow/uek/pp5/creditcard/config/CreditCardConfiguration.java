@@ -14,7 +14,7 @@ public class CreditCardConfiguration {
 	CreditCardFacade creditCardFacade() {
 		return new CreditCardFacadeImpl(new InMemoryCreditCardStorage());
 	}
-	//mogłaby być inna implementacja na przyklad do testów girl
+
 
 	@Bean
 	CreditCardStorage creditCardStorage(){
